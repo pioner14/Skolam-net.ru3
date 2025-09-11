@@ -29,26 +29,29 @@
 - Paths shown below assume single project - adjust based on plan.md structure
 
 ## Phase 3.1: Setup
-- [ ] T001 Initialize npm and install Eleventy in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/`
-- [ ] T002 Create Eleventy configuration file (`.eleventy.js`) and configure asset passthrough in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/.eleventy.js`
-- [ ] T003 Create base Nunjucks layout in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/_includes/base.njk`
+- [X] T001 Initialize npm and install Eleventy in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/`
+- [X] T002 Create Eleventy configuration file (`.eleventy.js`) and configure asset passthrough in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/.eleventy.js`
+- [X] T003 Create base Nunjucks layout in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/_includes/base.njk`
 
 ## Phase 3.3: Core Implementation
-- [ ] T004 Convert `src/index.html` to `src/index.md` and apply base layout in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/index.md`
-- [ ] T005 [P] Convert `src/discussion.html` to `src/discussion.md` and apply base layout in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/discussion.md`
-- [ ] T006 [P] Convert `src/garantiy.html` to `src/garantiy.md` and apply base layout in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/garantiy.md`
-- [ ] T007 [P] Convert `src/grafik raboty.html` to `src/grafik-raboty.md` and apply base layout in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/grafik-raboty.md`
-- [ ] T008 [P] Convert `src/Katalog.html` to `src/Katalog.md` and apply base layout in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/Katalog.md`
-- [ ] T009 [P] Convert `src/Rekomendacii.html` to `src/Rekomendacii.md` and apply base layout in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/Rekomendacii.md`
-- [ ] T010 [P] Convert `src/remont luka.html` to `src/remont-luka.md` and apply base layout in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/remont-luka.md`
-- [ ] T011 [P] Convert `src/specialist.html` to `src/specialist.md` and apply base layout in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/specialist.md`
-- [ ] T012 [P] Convert `src/steklo s obogrevom.html` to `src/steklo-s-obogrevom.md` and apply base layout in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/steklo-s-obogrevom.md`
-- [ ] T013 [P] Convert `src/zamena-remont.html` to `src/zamena-remont.md` and apply base layout in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/zamena-remont.md`
+- [X] T004 Convert `src/index.html` to `src/index.md` and apply base layout in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/index.md`
+- [X] T005 [P] Convert `src/discussion.html` to `src/discussion.md` and apply base layout in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/discussion.md`
+- [X] T006 [P] Convert `src/garantiy.html` to `src/garantiy.md` and apply base layout in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/garantiy.md`
+- [X] T007 [P] Convert `src/grafik raboty.html` to `src/grafik-raboty.md` and apply base layout in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/grafik-raboty.md`
+- [X] T008 [P] Convert `src/Katalog.html` to `src/Katalog.md` and apply base layout in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/Katalog.md`
+- [X] T009 [P] Convert `src/Rekomendacii.html` to `src/Rekomendacii.md` and apply base layout in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/Rekomendacii.md`
+- [X] T010 [P] Convert `src/remont luka.html` to `src/remont-luka.md` and apply base layout in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/remont-luka.md`
+- [X] T011 [P] Convert `src/specialist.html` to `src/specialist.md` and apply base layout in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/specialist.md`
+- [X] T012 [P] Convert `src/steklo s obogrevom.html` to `src/steklo-s-obogrevom.md` and apply base layout in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/steklo-s-obogrevom.md`
+- [X] T013 [P] Convert `src/zamena-remont.html` to `src/zamena-remont.md` and apply base layout in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/zamena-remont.md`
+- [X] Convert `src/kak_nas_nayti.htm` to `src/kak-nas-nayti.md` and apply base layout.
+- [X] Convert `src/kak_remontiruem.htm` to `src/kak-remontiruem.md` and apply base layout.
+- [X] Convert `src/stoimost.htm` to `src/stoimost.md` and apply base layout.
 
 ## Phase 3.5: Polish
-- [ ] T014 Update `package.json` with `start` and `build` scripts in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/package.json`
-- [ ] T015 Remove old HTML files and other unnecessary files in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/`
-- [ ] T016 Run Eleventy build command to verify the setup in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/`
+- [X] T014 Update `package.json` with `start` and `build` scripts in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/package.json`
+- [X] T015 Remove old HTML files and other unnecessary files in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/`
+- [X] T016 Run Eleventy build command to verify the setup in `/home/nick/SSD_1TB/Programming/Skolam-net.ru3/`
 
 ## Dependencies
 - T001, T002, T003 must be completed before T004-T013.
@@ -62,13 +65,13 @@
 # Launch T005-T013 together:
 Task: "Convert src/discussion.html to src/discussion.md and apply base layout in /home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/discussion.md"
 Task: "Convert src/garantiy.html to src/garantiy.md and apply base layout in /home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/garantiy.md"
-Task: "Convert src/grafik raboty.html to src/grafik-raboty.md and apply base layout in /home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/grafik-raboty.md"
-Task: "Convert src/Katalog.html to src/Katalog.md and apply base layout in /home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/Katalog.md"
-Task: "Convert src/Rekomendacii.html to src/Rekomendacii.md and apply base layout in /home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/Rekomendacii.md"
-Task: "Convert src/remont luka.html to src/remont-luka.md and apply base layout in /home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/remont-luka.md"
-Task: "Convert src/specialist.html to src/specialist.md and apply base layout in /home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/specialist.md"
-Task: "Convert src/steklo s obogrevom.html to src/steklo-s-obogrevom.md and apply base layout in /home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/steklo-s-obogrevom.md"
-Task: "Convert src/zamena-remont.html to src/zamena-remont.md and apply base layout in /home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/zamena-remont.md"
+Task: "Convert src/grafik raboty.html to src/grafik-raboty.md" and apply base layout in "/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/grafik-raboty.md"
+Task: "Convert src/Katalog.html to src/Katalog.md" and apply base layout in "/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/Katalog.md"
+Task: "Convert src/Rekomendacii.html to src/Rekomendacii.md" and apply base layout in "/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/Rekomendacii.md"
+Task: "Convert src/remont luka.html" to "src/remont-luka.md" and apply base layout in "/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/remont-luka.md"
+Task: "Convert src/specialist.html" to "src/specialist.md" and apply base layout in "/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/specialist.md"
+Task: "Convert src/steklo s obogrevom.html" to "src/steklo-s-obogrevom.md" and apply base layout in "/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/steklo-s-obogrevom.md"
+Task: "Convert src/zamena-remont.html" to "src/zamena-remont.md" and apply base layout in "/home/nick/SSD_1TB/Programming/Skolam-net.ru3/src/zamena-remont.md"
 ```
 
 ## Notes

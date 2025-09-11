@@ -8,6 +8,7 @@ module.exports = function(eleventyConfig) {
       output: "_site",
       includes: "_includes",
       data: "_data"
-    }
+    },
+    markdownTemplateEngine: "njk"
   };
 };
