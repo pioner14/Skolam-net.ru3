@@ -1,0 +1,6 @@
+DirectoryIndex index.php index.php3 index.html index.htm index.shtml
+RewriteEngine On
+
+RewriteCond %{SERVER_PORT} !^443$
+
+RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
