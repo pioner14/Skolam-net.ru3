@@ -1,0 +1,15 @@
+---
+layout: base.njk
+title: Как мы ремонтируем
+---
+<h1>Как мы ремонтируем сколы и трещины на стекле</h1>
+<img src="/images/cont-sep.gif" width="559" height="1">
+<ul>
+  <li class="peculiar_description"><span style="font-size: medium;">Засверливаем скол или трещину специальным буром для предотвращения их дальнейшего распостранения и снятия напряжения</span></li>
+  <li class="peculiar_description"><span style="font-size: medium;">С помощью инжектора создается вакуум и заполняется полимером вся область повреждения</span></li>
+  <li class="peculiar_description"><span style="font-size: medium;">При ремонте и скола так и трещины используется полимер. Он имеет такую ​​же прозрачность и прочность как и стекло. В конечном итоге, если все сделано правильно, то место ремонта не должно бросаться в глаза!</span></li>
+  <li class="peculiar_description"><span style="font-size: medium;">Ультрафиолетовая лампа на месте ремонта высушивает полимер, и прочность шва становится максимальной.</span></li>
+  <li class="peculiar_description"><span style="font-size: medium;">Зачищаем место ремонта.</span></li>
+</ul>
+<p><span style="font-size: large;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;До&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;После</span></p>
+<p><span style="font-size: medium;"><img src="/images/glass_weld_edit.jpg" alt="было до и стало после" align="top"></span></p>
