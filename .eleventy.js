@@ -9,6 +9,7 @@ module.exports = function(eleventyConfig) {
       includes: "_includes",
       data: "_data"
     },
+    pathPrefix: "/Skolam-net.ru3/",
     markdownTemplateEngine: "njk"
   };
 };
