@@ -9,13 +9,13 @@
     
     <title>{{ title or "Ремонт сколов и трещин в лобовых автостеклах в Химках, а также для близлежащих районов Куркино, Лобня,Сходня, Левый Берег"}}</title>
     
-    <link href="/css/style.css" rel="stylesheet">
+    <link href="{{ '/css/style.css' | url }}" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <header class="site-header">
             <div class="logo">
-                <img src="/images/logo.gif" width="72" height="72" alt="Логотип Сколам-НЕТ">
+                <img src="{{ '/images/logo.gif' | url }}" width="72" height="72" alt="Логотип Сколам-НЕТ">
                 <h1 class="site-title">Сколам-НЕТ</h1>
             </div>
             
@@ -23,20 +23,20 @@
             
             <nav class="main-navigation">
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="/">Главная</a></li>
-                    <li><a href="/zamena-remont/">Менять или ремонт?</a></li>
-                    <li><a href="/Rekomendacii/">ПРИ ПОВРЕЖДЕНИИ</a></li>
-                    <li><a href="/garantiy/">Гарантия на ремонт</a></li>
-                    <li><a href="/specialist/">Наши специалисты</a></li>
-                    <li><a href="/steklo-s-obogrevom/">Стекло с обогревом</a></li>
-                    <li><a href="/remont-luka/">Ремонт стекла крыши</a></li>
-                    <li><a href="/stoimost/">Стоимость</a></li>
-                    <li><a href="/grafik-raboty/">График работы</a></li>
-                    <li><a href="/kak-nas-nayti/">Как проехать</a></li>
-                    <li><a href="/kak-nas-nayti/">Контакты</a></li>
-                    <li><a href="/Katalog/">Каталог ссылок</a></li>
-                    <li><a href="/kak-remontiruem/">Как ремонтируем</a></li>
-                    <li><a href="/discussion/">ЗАДАТЬ ВОПРОС</a></li>
+                    <li><a href="{{ '/' | url }}">Главная</a></li>
+                    <li><a href="{{ '/zamena-remont/' | url }}">Менять или ремонт?</a></li>
+                    <li><a href="{{ '/Rekomendacii/' | url }}">ПРИ ПОВРЕЖДЕНИИ</a></li>
+                    <li><a href="{{ '/garantiy/' | url }}">Гарантия на ремонт</a></li>
+                    <li><a href="{{ '/specialist/' | url }}">Наши специалисты</a></li>
+                    <li><a href="{{ '/steklo-s-obogrevom/' | url }}">Стекло с обогревом</a></li>
+                    <li><a href="{{ '/remont-luka/' | url }}">Ремонт стекла крыши</a></li>
+                    <li><a href="{{ '/stoimost/' | url }}">Стоимость</a></li>
+                    <li><a href="{{ '/grafik-raboty/' | url }}">График работы</a></li>
+                    <li><a href="{{ '/kak-nas-nayti/' | url }}">Как проехать</a></li>
+                    <li><a href="{{ '/kak-nas-nayti/' | url }}">Контакты</a></li>
+                    <li><a href="{{ '/Katalog/' | url }}">Каталог ссылок</a></li>
+                    <li><a href="{{ '/kak-remontiruem/' | url }}">Как ремонтируем</a></li>
+                    <li><a href="{{ '/discussion/' | url }}">ЗАДАТЬ ВОПРОС</a></li>
                     <li><a href="https://khimki-avto.ru">Ремонт Химки</a></li>
                     <li><a href="https://t.me/skolam_net">Группа в Телеграмм</a></li>
                 </ul>
@@ -53,10 +53,10 @@
         
         <footer class="site-footer">
             <div class="footer-menu">
-                <a href="/">Домашняя страница</a> | 
-                <a href="/kak-nas-nayti/">О нас</a> | 
-                <a href="/stoimost/">Стоимость услуг</a> | 
-                <a href="/kak-nas-nayti/">Контакты</a>
+                <a href="{{ '/' | url }}">Домашняя страница</a> | 
+                <a href="{{ '/kak-nas-nayti/' | url }}">О нас</a> | 
+                <a href="{{ '/stoimost/' | url }}">Стоимость услуг</a> | 
+                <a href="{{ '/kak-nas-nayti/' | url }}">Контакты</a>
             </div>
             <div class="footer-copyright">
                 &copy; {{ site.currentYear }} Сколам-НЕТ All Rights Reserved

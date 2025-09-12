@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ELEVENTY_ENV=development npx @11ty/eleventy --serve",
-    "build": "ELEVENTY_ENV=production npx @11ty/eleventy",
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy --config=.eleventy.prod.js",
     "deploy": "npm run build && gh-pages -d _site",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
