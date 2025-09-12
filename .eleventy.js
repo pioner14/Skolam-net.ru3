@@ -1,6 +1,12 @@
+const { DateTime } = require("luxon");
+
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("src/css");
-  eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addFilter("date", (dateObj, format) => {
+    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat(format);
+  });
+
+  const isProduction = process.env.ELEVENTY_ENV === 'production';
+  const pathPrefix = isProduction ? "/Skolam-net.ru3/" : "/";
 
   return {
     dir: {
@@ -9,7 +15,7 @@ module.exports = function(eleventyConfig) {
       includes: "_includes",
       data: "_data"
     },
-    
+    pathPrefix: pathPrefix,
     markdownTemplateEngine: "njk"
   };
 };
