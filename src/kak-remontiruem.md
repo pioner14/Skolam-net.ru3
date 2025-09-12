@@ -1,6 +1,7 @@
 ---
 layout: base.njk
 title: Как мы ремонтируем
+permalink: /kak-remontiruem/index.html
 ---
 <h1>Как мы ремонтируем сколы и трещины на стекле</h1>
 <img src="/images/cont-sep.gif" width="559" height="1">

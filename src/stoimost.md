@@ -1,6 +1,7 @@
 ---
 layout: base.njk
 title: Стоимость ремонта
+permalink: /stoimost/index.html
 ---
 <h1>Стоимость ремонта сколов и трещин</h1>
 <img src="/images/cont-sep.gif" width="559" height="1">

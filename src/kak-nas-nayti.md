@@ -1,6 +1,7 @@
 ---
 layout: base.njk
 title: Как нас найти
+permalink: /kak-nas-nayti/index.html
 ---
 <h1>Контакты и схема проезда</h1>
 <img src="/images/cont-sep.gif" width="559" height="1">
