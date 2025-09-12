@@ -1,4 +1,4 @@
-/* Современный CSS с улучшенной типографикой */
+/* Современный CSS с улучшенной типографикой и адаптивностью */
 
 /* Базовые стили */
 :root {
@@ -9,6 +9,7 @@
   --accent-light: #FBC58C;
   --text-color: #FFFFFF;
   --text-color-dark: #f9b59d;
+  --text-on-light: #333333;
   
   /* Типографика */
   --font-size-base: 1rem;
@@ -30,6 +31,14 @@
   
   /* Радиус скругления */
   --border-radius: 4px;
+  
+  /* Тени */
+  --box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  --box-shadow-hover: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -39,7 +48,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
-  color: var(--primary-dark);
+  color: var(--text-on-light);
 }
 
 /* Сетка */
@@ -56,18 +65,17 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: var(--spacing-lg);
   margin-bottom: var(--spacing-md);
   color: var(--text-color);
+  background-color: var(--primary-color);
 }
 
 h1 {
   font-size: var(--font-size-h1);
-  background-color: var(--primary-color);
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
 h2 {
   font-size: var(--font-size-h2);
-  background-color: var(--primary-color);
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--border-radius);
   margin-top: var(--spacing-xl);
@@ -75,7 +83,6 @@ h2 {
 
 h3 {
   font-size: var(--font-size-h3);
-  background-color: var(--primary-color);
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--border-radius);
 }
@@ -114,6 +121,7 @@ li {
 img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
 /* Таблицы */
@@ -121,6 +129,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: var(--spacing-md);
+  box-shadow: var(--box-shadow);
 }
 
 th, td {
@@ -161,11 +170,15 @@ button, .button {
   font-size: var(--font-size-base);
   text-decoration: none;
   display: inline-block;
+  box-shadow: var(--box-shadow);
+  transition: all 0.2s ease;
 }
 
 button:hover, .button:hover {
   background-color: var(--accent-light);
   text-decoration: none;
+  box-shadow: var(--box-shadow-hover);
+  transform: translateY(-2px);
 }
 
 /* Адаптивность */
@@ -187,6 +200,10 @@ button:hover, .button:hover {
   
   h1, h2, h3 {
     padding: var(--spacing-sm);
+  }
+  
+  ul, ol {
+    padding-left: var(--spacing-md);
   }
 }
 
@@ -221,6 +238,33 @@ button:hover, .button:hover {
 }
 
 /* Навигация */
+.site-header {
+  background-color: var(--primary-dark);
+  padding: var(--spacing-md) 0;
+  box-shadow: var(--box-shadow);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.logo img {
+  border-radius: var(--border-radius);
+}
+
+.site-title {
+  color: var(--text-color);
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.main-navigation {
+  margin-bottom: var(--spacing-md);
+}
+
 .nav-menu {
   list-style: none;
   padding: 0;
@@ -228,6 +272,7 @@ button:hover, .button:hover {
   display: flex;
   flex-wrap: wrap;
   background-color: var(--primary-color);
+  border-radius: var(--border-radius);
 }
 
 .nav-menu li {
@@ -239,40 +284,94 @@ button:hover, .button:hover {
   padding: var(--spacing-sm) var(--spacing-md);
   color: var(--text-color);
   text-decoration: none;
-  transition: background-color 0.2s;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .nav-menu a:hover {
   background-color: var(--accent-color);
   color: var(--primary-dark);
+  text-decoration: none;
+}
+
+/* Мобильное меню */
+.menu-toggle {
+  display: none;
+  background: var(--accent-color);
+  color: var(--primary-dark);
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
 }
 
 @media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
   .nav-menu {
+    display: none;
     flex-direction: column;
+    border-radius: var(--border-radius);
+  }
+  
+  .nav-menu.active {
+    display: flex;
   }
   
   .nav-menu a {
     padding: var(--spacing-sm);
     border-bottom: 1px solid rgba(255,255,255,0.1);
   }
+  
+  .logo {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Основной контент */
+.main-content {
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-md);
+  box-shadow: var(--box-shadow);
+}
+
+.body-content {
+  color: var(--text-color);
+  padding: var(--spacing-md);
 }
 
 /* Подвал */
-.footer {
+.site-footer {
   background-color: var(--primary-dark);
   color: var(--text-color-dark);
   padding: var(--spacing-md) 0;
   margin-top: var(--spacing-xl);
   text-align: center;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
 }
 
-.footer a {
+.footer-menu {
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer-menu a {
   color: var(--text-color-dark);
+  margin: 0 var(--spacing-xs);
 }
 
-.footer a:hover {
+.footer-menu a:hover {
   color: var(--text-color);
+}
+
+.footer-copyright {
+  font-size: var(--font-size-small);
 }
 
 /* Карточки */
@@ -281,6 +380,7 @@ button:hover, .button:hover {
   border-radius: var(--border-radius);
   margin-bottom: var(--spacing-md);
   overflow: hidden;
+  box-shadow: var(--box-shadow);
 }
 
 .card-header {
@@ -291,15 +391,6 @@ button:hover, .button:hover {
 
 .card-body {
   padding: var(--spacing-md);
-}
-
-/* Улучшенные стили для основного контента */
-.body-content {
-  color: var(--text-color);
-  background-color: var(--primary-color);
-  padding: var(--spacing-md);
-  border-radius: 0 0 var(--border-radius) var(--border-radius);
-  margin-bottom: var(--spacing-md);
 }
 
 /* Специальные классы для контента */
@@ -314,6 +405,7 @@ button:hover, .button:hover {
   font-size: var(--font-size-small);
   margin-bottom: var(--spacing-md);
   border-radius: var(--border-radius);
+  background-color: rgba(254, 176, 114, 0.1);
 }
 
 .price-table {
@@ -324,6 +416,7 @@ button:hover, .button:hover {
   border-collapse: collapse;
   width: 100%;
   max-width: 600px;
+  box-shadow: var(--box-shadow);
 }
 
 .price-table caption {
@@ -332,6 +425,9 @@ button:hover, .button:hover {
   margin-bottom: var(--spacing-sm);
   color: var(--text-color);
   text-align: center;
+  background-color: var(--primary-color);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
 .price-table td {

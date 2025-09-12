@@ -19,8 +19,10 @@
                 <h1 class="site-title">Сколам-НЕТ</h1>
             </div>
             
+            <button class="menu-toggle" id="menuToggle">☰ Меню</button>
+            
             <nav class="main-navigation">
-                <ul class="nav-menu">
+                <ul class="nav-menu" id="navMenu">
                     <li><a href="{{ '/' | url }}">Главная</a></li>
                     <li><a href="{{ '/zamena-remont/' | url }}">Менять или ремонт?</a></li>
                     <li><a href="{{ '/Rekomendacii/' | url }}">ПРИ ПОВРЕЖДЕНИИ</a></li>
@@ -61,6 +63,20 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        // Мобильное меню
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
 
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
