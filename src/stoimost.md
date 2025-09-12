@@ -9,7 +9,7 @@ permalink: /stoimost/index.html
 <p><span style="font-size: medium;">но можно смело сказать, что в большинстве случаев цена ремонта не превышает, а зачастую и меньше цены полиса ОСАГО!</span></p>
 <p><span style="font-size: medium;">Мы можем назвать только начальную, самую распространенную, но может меняться незначительно</span></p>
 
-<table align="center" style="border:#feb072 solid 1px;font-size:18px;padding:4px 6px 2px 6px">
+<table class="price-table">
 <caption><b>Прайс лист</b></caption>
   <tr>
       <td>Скол</td>
@@ -22,6 +22,18 @@ permalink: /stoimost/index.html
 </table>
 
 <br>
-<div style="border:#feb072 solid 1px;padding:4px 6px 2px 6px">
-<span style="font-size: medium;">Если сомневаетесь в том, что можно отремонтировать или хотите уточнить цену - <b>не стесняйтесь, мы денег за осмотр не берем!</b></span>
+<div class="info-block">
+<span >Если сомневаетесь в том, что можно отремонтировать или хотите уточнить цену - <strong>не стесняйтесь, мы денег за осмотр не берем!</strong></span>
+</div>
+� не берем!</b></span>
+</div>
+�рем!</b></span>
+</div>
+an>
+</div>
+�рем!</b></span>
+</div>
+
+</div>
+�рем!</b></span>
 </div>
