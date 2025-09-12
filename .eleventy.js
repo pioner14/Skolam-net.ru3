@@ -5,9 +5,7 @@ module.exports = function(eleventyConfig) {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat(format);
   });
 
-  const isProduction = process.env.ELEVENTY_ENV === 'production';
-  const pathPrefix = isProduction ? "/Skolam-net.ru3/" : "/";
-
+  // Убираем pathPrefix из конфигурации, будем использовать относительные пути
   return {
     dir: {
       input: "src",
@@ -15,7 +13,6 @@ module.exports = function(eleventyConfig) {
       includes: "_includes",
       data: "_data"
     },
-    pathPrefix: pathPrefix,
     markdownTemplateEngine: "njk"
   };
 };
