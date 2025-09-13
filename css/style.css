@@ -555,15 +555,21 @@ button:active, .button:active {
   }
 }
 
+/* Telegram Widget */
+.telegram-widget-container {
+  background-color: var(--text-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin: var(--spacing-md) 0;
+  padding: var(--spacing-sm);
+  box-shadow: var(--box-shadow);
+}
+
 /* Для очень маленьких экранов */
 @media (max-width: 480px) {
-  .nav-menu a {
-    padding: var(--spacing-xs) var(--spacing-sm);
-    font-size: var(--font-size-small);
-  }
-  
-  .content-wrapper {
-    padding: var(--spacing-sm) 0;
+  .telegram-widget-container {
+    padding: var(--spacing-xs);
+    margin: var(--spacing-sm) 0;
   }
 }
 
@@ -574,15 +580,6 @@ button:active, .button:active {
   margin-bottom: var(--spacing-md);
   box-shadow: var(--box-shadow);
   transition: var(--transition);
-}
-
-.main-content:hover {
-  box-shadow: var(--box-shadow-hover);
-}
-
-.body-content {
-  color: var(--text-color);
-  padding: var(--spacing-md);
 }
 
 /* Подвал */
