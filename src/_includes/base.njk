@@ -82,7 +82,7 @@
                     <ul class="nav-menu" id="navMenu">
                         <li><a href="{{ '/' | url }}">Главная</a></li>
                         <li><a href="{{ '/zamena-remont/' | url }}">Менять или ремонт?</a></li>
-                        <li><a href="{{ '/Rekomendacii/' | url }}">ПРИ ПОВРЕЖДЕНИИ</a></li>
+                        <li><a href="{{ '/Rekomendacii/' | url }}">При повреждении</a></li>
                         <li><a href="{{ '/garantiy/' | url }}">Гарантия на ремонт</a></li>
                         <li><a href="{{ '/specialist/' | url }}">Наши специалисты</a></li>
                         <li><a href="{{ '/steklo-s-obogrevom/' | url }}">Стекло с обогревом</a></li>
@@ -93,7 +93,7 @@
                         <li><a href="{{ '/kak-nas-nayti/' | url }}">Контакты</a></li>
                         
                         <li><a href="{{ '/kak-remontiruem/' | url }}">Как ремонтируем</a></li>
-                        <li><a href="{{ '/discussion/' | url }}">ЗАДАТЬ ВОПРОС</a></li>
+                        <li><a href="{{ '/discussion/' | url }}">Задать вопрос</a></li>
                         <li><a href="https://khimki-avto.ru">Ремонт Химки</a></li>
                         <li><a href="https://t.me/skolam_net">Группа в Телеграм</a></li>
                     </ul>
@@ -159,5 +159,27 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/92563571" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
+    
+    <!-- Telegram Widget Styles -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Функция для изменения стилей виджета Telegram
+        function styleTelegramWidget() {
+          var container = document.querySelector('.telegram-widget-container');
+          if (container) {
+            // Найти iframe внутри контейнера
+            var iframe = container.querySelector('iframe');
+            if (iframe) {
+              // Добавить класс для стилизации
+              iframe.classList.add('styled-telegram-widget');
+            }
+          }
+        }
+        
+        // Попробовать применить стили сразу и через небольшую задержку
+        styleTelegramWidget();
+        setTimeout(styleTelegramWidget, 1000);
+      });
+    </script>
 </body>
 </html>
