@@ -378,6 +378,7 @@ button:active, .button:active {
   flex: 1;
   display: flex;
   flex-direction: column;
+  align-self: stretch;
 }
 
 .nav-menu {
