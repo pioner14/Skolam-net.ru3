@@ -1,35 +1,30 @@
 ---
 layout: base.njk
 title: Как нас найти
-permalink: /kak-nas-nayti/index.html
+description: Адрес и контакты мастерской "Сколам-НЕТ" в Химках. Схема проезда и телефон для записи.
+keywords: химки, адрес, контакты, телефон, схема проезда, левый берег
 ---
-<h2>Контакты и схема проезда</h2>
-<img src="/images/cont-sep.gif" width="559" height="1">
-<h2>Внимание!</h2>
-<p>Перед выездом обязательно согласуйте время по нижеуказанным телефонам!</p>
-<p>К сожалению, технические перерывы в нашей работе не имеют постоянного графика.</p>
-<p>Мы можем выехать на консультацию или в магазин за материалами.</p>
-<p>Надеемся на Ваше понимание и ждем Вашего звонка.</p>
+
+## Контакты и схема проезда
+
+### Внимание!
+
+Перед выездом обязательно согласуйте время по нижеуказанным телефонам!
+
+К сожалению, технические перерывы в нашей работе не имеют постоянного графика.
+
+Мы можем выехать на консультацию или в магазин за материалами.
+
+Надеемся на Ваше понимание и ждем Вашего звонка.
+
 <div class="info-block">
- Тел. 8 915 005 46 60 или 8 977 269 92 42 
+  <p>Тел. <a href="tel:89150054660" class="btn-primary">8 915 005 46 60</a> или <a href="tel:89772699242" class="btn-primary">8 977 269 92 42</a></p>
 </div>
-<br>
-<img src="/images/cont-sep.gif" width="559" height="1">
-<p>Наш адрес:</p>
-<p>г. Химки (Левый берег), ул. Совхозная, д. 22</p>
-<p>Проезд - съезд, светофор налево и направо на парковку</p>
+
+### Наш адрес:
+
+г. Химки (Старбеево), ул. Чайкиной, д. 22
+
+Проезд — съезд, светофор налево и направо на парковку
+
 <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3AthqoUiRPsRGSM4ptU5QmXlqBAfj07ZSD&amp;width=100%25&amp;height=450&amp;lang=ru_RU&amp;scroll=true"></script>
-mp;scroll=true"></script>
-mp;scroll=true"></script>
-
-mp;scroll=true"></script>
-</script>
-
-mp;scroll=true"></script>
-mp;scroll=true"></script>
-mp;scroll=true"></script>
-mp;scroll=true"></script>
-
-mp;scroll=true"></script>
-
-mp;scroll=true"></script>

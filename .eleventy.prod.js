@@ -14,6 +14,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/css/");
   eleventyConfig.addWatchTarget("./src/images/");
 
+  // Добавляем глобальные данные
+  eleventyConfig.addGlobalData("env", "production");
+
   return {
     dir: {
       input: "src",

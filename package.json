@@ -5,8 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "npx @11ty/eleventy --serve",
-    "build": "npx @11ty/eleventy --config=.eleventy.prod.js",
+    "build": "npm run minify-css && npx @11ty/eleventy --config=.eleventy.prod.js",
     "deploy": "npm run build && gh-pages -d _site",
+    "optimize-images": "node scripts/optimize-images.js",
+    "minify-css": "node scripts/minify-css.js",
+    "lighthouse": "node scripts/lighthouse-test.js",
+    "accessibility": "node scripts/check-accessibility.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,7 +19,16 @@
   "type": "commonjs",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
-    "gh-pages": "^6.3.0"
+    "axe-core": "^4.12.1",
+    "chrome-launcher": "^1.2.0",
+    "clean-css": "^5.3.3",
+    "gh-pages": "^6.3.0",
+    "imagemin": "^9.0.1",
+    "imagemin-jpegtran": "^8.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^10.0.0",
+    "lighthouse": "^12.8.2",
+    "sharp": "^0.34.3"
   },
   "dependencies": {
     "express": "^5.1.0",

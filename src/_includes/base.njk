@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Language" content="ru">
-    <meta name="description" content="{{ description or "Ремонт сколов и трещин в лобовых автостеклах в Химках, а также для близлежащих районов Куркино, Лобня,Сходня, Левый Берег"}}">
+    <meta http-equiv="Content-Language" content="{{ contentLanguage or "ru" }}">
+    <meta name="description" content="{{ description or "Ремонт сколов и трещин в лобовых автостеклах в Химках, а также для близлежащих районов Куркино, Лобня, Сходня, Левый Берег"}}">
     <meta name="keywords" content="{{ keywords or "химки, куркино, ремонт, скол, трещин, стекол, лобовых, стеклянный люк, панорамная крыша"}}">
     
-    <title>{{ title or "Ремонт сколов и трещин в лобовых автостеклах в Химках, а также для близлежащих районов Куркино, Лобня,Сходня, Левый Берег"}}</title>
+    <title>{{ title or "Ремонт сколов и трещин в лобовых автостеклах в Химках, а также для близлежащих районов Куркино, Лобня, Сходня, Левый Берег"}}</title>
     
+    {% if env == "production" %}
+    <link href="{{ '/css/style.min.css' | url }}" rel="stylesheet">
+    {% else %}
     <link href="{{ '/css/style.css' | url }}" rel="stylesheet">
+    {% endif %}
 </head>
 <body>
     <div class="container">
@@ -34,17 +38,17 @@
                     <li><a href="{{ '/grafik-raboty/' | url }}">График работы</a></li>
                     <li><a href="{{ '/kak-nas-nayti/' | url }}">Как проехать</a></li>
                     <li><a href="{{ '/kak-nas-nayti/' | url }}">Контакты</a></li>
-                    <li><a href="{{ '/Katalog/' | url }}">Каталог ссылок</a></li>
+                    
                     <li><a href="{{ '/kak-remontiruem/' | url }}">Как ремонтируем</a></li>
                     <li><a href="{{ '/discussion/' | url }}">ЗАДАТЬ ВОПРОС</a></li>
                     <li><a href="https://khimki-avto.ru">Ремонт Химки</a></li>
-                    <li><a href="https://t.me/skolam_net">Группа в Телеграмм</a></li>
+                    <li><a href="https://t.me/skolam_net">Группа в Телеграм</a></li>
                 </ul>
             </nav>
         </header>
         
         <main class="main-content">
-            <h1>{{ title or "Ремонт сколов и трещин в лобовых автостеклах в Химках, а также для близлежащих районов Куркино, Лобня,Сходня, Левый Берег!"}}</h1>
+            <h1>{{ title or "Ремонт сколов и трещин в лобовых автостеклах в Химках, а также для близлежащих районов Куркино, Лобня, Сходня, Левый Берег!"}}</h1>
             
             <div class="body-content">
                 {{ content | safe }}
@@ -59,7 +63,7 @@
                 <a href="{{ '/kak-nas-nayti/' | url }}">Контакты</a>
             </div>
             <div class="footer-copyright">
-                &copy; {{ site.currentYear }} Сколам-НЕТ All Rights Reserved
+                &copy; {{ site.currentYear }} Сколам-НЕТ Все права защищены
             </div>
         </footer>
     </div>
