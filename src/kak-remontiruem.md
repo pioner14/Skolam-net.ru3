@@ -29,4 +29,10 @@ keywords: химки, ремонт стекол, технология, скол�
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;До&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;После
 
-![Пример ремонта скола на лобовом стекле - до и после]({{ '/images/glass_weld_edit.jpg' | url }})
+<p>
+  <picture>
+    <source srcset="{{ '/images/converted/glass_weld_edit.avif' | url }}" type="image/avif">
+    <source srcset="{{ '/images/converted/glass_weld_edit.webp' | url }}" type="image/webp">
+    <img src="{{ '/images/glass_weld_edit.jpg' | url }}" alt="Пример ремонта скола на лобовом стекле - до и после">
+  </picture>
+</p>
