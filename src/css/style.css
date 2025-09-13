@@ -251,18 +251,21 @@ button:active, .button:active {
   border-radius: var(--border-radius);
   overflow: hidden;
   box-shadow: var(--box-shadow);
-  height: 300px;
+  min-height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: var(--text-color);
   background: linear-gradient(rgba(115, 8, 0, 0.7), rgba(68, 5, 1, 0.9)), url('/images/p1.webp') center/cover no-repeat;
+  padding: var(--spacing-md) 0;
 }
 
 .hero-content {
   padding: var(--spacing-lg);
   max-width: 800px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .hero h1 {
@@ -271,22 +274,24 @@ button:active, .button:active {
   margin: 0 0 var(--spacing-md) 0;
   font-size: 2.5rem;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  line-height: 1.2;
 }
 
 .hero p {
   font-size: var(--font-size-large);
   margin-bottom: var(--spacing-md);
   text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  line-height: 1.4;
 }
 
 @media (max-width: 768px) {
   .hero {
-    height: 250px;
+    min-height: 250px;
+    padding: var(--spacing-sm) 0;
   }
   
   .hero h1 {
     font-size: 2rem;
-    line-height: 1.2;
   }
   
   .hero-content {
@@ -296,16 +301,20 @@ button:active, .button:active {
 
 @media (max-width: 480px) {
   .hero {
-    height: 200px;
+    min-height: 200px;
+    padding: var(--spacing-sm) 0;
   }
   
   .hero h1 {
     font-size: 1.8rem;
-    line-height: 1.2;
   }
   
   .hero-content {
     padding: var(--spacing-sm);
+  }
+  
+  .hero p {
+    font-size: var(--font-size-base);
   }
 }
 
