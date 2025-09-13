@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: https://skolam-net.ru3/sitemap.xml

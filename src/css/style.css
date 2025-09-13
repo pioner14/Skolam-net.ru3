@@ -257,42 +257,7 @@ button:active, .button:active {
   justify-content: center;
   text-align: center;
   color: var(--text-color);
-  background: linear-gradient(rgba(115, 8, 0, 0.7), rgba(68, 5, 1, 0.9)), url('/images/p1.jpg') center/cover no-repeat;
-}
-
-.hero-content {
-  padding: var(--spacing-lg);
-  max-width: 800px;
-}
-
-.hero h1 {
-  background-color: transparent;
-  color: var(--text-color);
-  margin: 0 0 var(--spacing-md) 0;
-  font-size: 2.5rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-.hero p {
-  font-size: var(--font-size-large);
-  margin-bottom: var(--spacing-md);
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-
-/* Hero-секция */
-.hero {
-  position: relative;
-  margin-bottom: var(--spacing-md);
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  box-shadow: var(--box-shadow);
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: var(--text-color);
-  background: linear-gradient(rgba(115, 8, 0, 0.7), rgba(68, 5, 1, 0.9)), url('/images/p1.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(115, 8, 0, 0.7), rgba(68, 5, 1, 0.9)), url('/images/p1.webp') center/cover no-repeat;
 }
 
 .hero-content {
@@ -351,18 +316,29 @@ button:active, .button:active {
 }
 
 /* Навигация */
+.site-header-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .site-header {
   background-color: var(--primary-dark);
-  padding: var(--spacing-md) 0;
   box-shadow: var(--box-shadow);
   position: relative;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  background-color: var(--primary-dark);
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
-  margin-bottom: var(--spacing-md);
 }
 
 .logo img {
@@ -379,14 +355,29 @@ button:active, .button:active {
   margin: 0;
   font-size: 1.5rem;
   transition: var(--transition);
+  font-weight: bold;
 }
 
 .site-title:hover {
   color: var(--accent-color);
 }
 
+.content-wrapper {
+  display: flex;
+  flex: 1;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) 0;
+}
+
 .main-navigation {
-  margin-bottom: var(--spacing-md);
+  background-color: var(--primary-color);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  min-width: 250px;
+  max-width: 250px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .nav-menu {
@@ -394,10 +385,8 @@ button:active, .button:active {
   padding: 0;
   margin: 0;
   display: flex;
-  flex-wrap: wrap;
-  background-color: var(--primary-color);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
+  flex-direction: column;
+  flex: 1;
 }
 
 .nav-menu li {
@@ -425,9 +414,25 @@ button:active, .button:active {
   outline-offset: -2px;
 }
 
+.main-content {
+  flex: 1;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.main-content:hover {
+  box-shadow: var(--box-shadow-hover);
+}
+
+.body-content {
+  color: var(--text-color);
+  padding: var(--spacing-md);
+}
+
 /* Мобильное меню */
 .menu-toggle {
-  display: none;
   background: var(--accent-color);
   color: var(--primary-dark);
   border: none;
@@ -435,9 +440,9 @@ button:active, .button:active {
   border-radius: var(--border-radius);
   cursor: pointer;
   font-weight: 600;
-  margin-bottom: var(--spacing-md);
   transition: var(--transition);
   box-shadow: var(--box-shadow);
+  display: none; /* Скрываем кнопку по умолчанию */
 }
 
 .menu-toggle:hover {
@@ -447,15 +452,23 @@ button:active, .button:active {
 }
 
 @media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+  
+  .main-navigation {
+    min-width: 100%;
+    max-width: 100%;
+  }
+  
   .menu-toggle {
-    display: block;
+    display: block; /* Показываем кнопку на мобильных */
   }
   
   .nav-menu {
     display: none;
     flex-direction: column;
     border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
   }
   
   .nav-menu.active {
@@ -466,10 +479,17 @@ button:active, .button:active {
     padding: var(--spacing-sm);
     border-bottom: 1px solid rgba(255,255,255,0.1);
   }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+  .nav-menu a {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--font-size-small);
+  }
   
-  .logo {
-    flex-direction: column;
-    text-align: center;
+  .content-wrapper {
+    padding: var(--spacing-sm) 0;
   }
 }
 

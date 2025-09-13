@@ -9,6 +9,8 @@ module.exports = function(eleventyConfig) {
   // Копируем статические файлы в выходную директорию
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy("src/robots.txt");
+  eleventyConfig.addPassthroughCopy("src/sitemap.xml");
 
   // Добавляем отслеживание изменений в статических файлах
   eleventyConfig.addWatchTarget("./src/css/");
@@ -16,6 +18,18 @@ module.exports = function(eleventyConfig) {
 
   // Добавляем глобальные данные
   eleventyConfig.addGlobalData("env", "development");
+  
+  // Добавляем фильтр absoluteUrl
+  eleventyConfig.addFilter("absoluteUrl", function(url) {
+    const baseUrl = "https://skolam-net.ru3"; // Замените на реальный URL при деплое
+    if (url.startsWith("http")) {
+      return url;
+    }
+    if (url.startsWith("/")) {
+      return baseUrl + url;
+    }
+    return baseUrl + "/" + url;
+  });
 
   return {
     dir: {

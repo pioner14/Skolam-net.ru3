@@ -9,6 +9,46 @@
     
     <title>{{ title or "Ремонт сколов и трещин в лобовых автостеклах в Химках, а также для близлежащих районов Куркино, Лобня, Сходня, Левый Берег"}}</title>
     
+    <link rel="canonical" href="{{ page.url | url | absoluteUrl }}">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ page.url | url | absoluteUrl }}">
+    <meta property="og:title" content="{{ title or "Ремонт сколов и трещин в лобовых автостеклах в Химках, а также для близлежащих районов Куркино, Лобня, Сходня, Левый Берег"}}">
+    <meta property="og:description" content="{{ description or "Ремонт сколов и трещин в лобовых автостеклах в Химках, а также для близлежащих районов Куркино, Лобня, Сходня, Левый Берег"}}">
+    <meta property="og:image" content="{{ '/images/p1.jpg' | url | absoluteUrl }}">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ page.url | url | absoluteUrl }}">
+    <meta property="twitter:title" content="{{ title or "Ремонт сколов и трещин в лобовых автостеклах в Химках, а также для близлежащих районов Куркино, Лобня, Сходня, Левый Берег"}}">
+    <meta property="twitter:description" content="{{ description or "Ремонт сколов и трещин в лобовых автостеклах в Химках, а также для близлежащих районов Куркино, Лобня, Сходня, Левый Берег"}}">
+    <meta property="twitter:image" content="{{ '/images/p1.jpg' | url | absoluteUrl }}">
+    
+    <link rel="icon" type="image/x-icon" href="{{ '/images/favicon.ico' | url }}">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Сколам-НЕТ",
+      "description": "Профессиональный ремонт сколов и трещин в лобовых автостеклах в Химках и ближайших районах. Быстро, качественно, с гарантией!",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ул. Чайкиной, д. 22",
+        "addressLocality": "Химки",
+        "addressRegion": "Московская область",
+        "postalCode": "141400",
+        "addressCountry": "RU"
+      },
+      "telephone": "+7-915-005-46-60",
+      "openingHours": "Mo-Su 00:00-23:59",
+      "priceRange": "от 1000 руб.",
+      "areaServed": ["Химки", "Куркино", "Лобня", "Сходня", "Левый Берег"]
+    }
+    </script>
+    
     {% if env == "production" %}
     <link href="{{ '/css/style.min.css' | url }}" rel="stylesheet">
     {% else %}
@@ -16,49 +56,57 @@
     {% endif %}
 </head>
 <body>
-    <div class="container">
-        <header class="site-header">
-            <div class="logo">
-                <img src="{{ '/images/logo.gif' | url }}" width="72" height="72" alt="Логотип Сколам-НЕТ">
-                <h1 class="site-title">Сколам-НЕТ</h1>
-            </div>
-            
-            <button class="menu-toggle" id="menuToggle">☰ Меню</button>
-            
-            <nav class="main-navigation">
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="{{ '/' | url }}">Главная</a></li>
-                    <li><a href="{{ '/zamena-remont/' | url }}">Менять или ремонт?</a></li>
-                    <li><a href="{{ '/Rekomendacii/' | url }}">ПРИ ПОВРЕЖДЕНИИ</a></li>
-                    <li><a href="{{ '/garantiy/' | url }}">Гарантия на ремонт</a></li>
-                    <li><a href="{{ '/specialist/' | url }}">Наши специалисты</a></li>
-                    <li><a href="{{ '/steklo-s-obogrevom/' | url }}">Стекло с обогревом</a></li>
-                    <li><a href="{{ '/remont-luka/' | url }}">Ремонт стекла крыши</a></li>
-                    <li><a href="{{ '/stoimost/' | url }}">Стоимость</a></li>
-                    <li><a href="{{ '/grafik-raboty/' | url }}">График работы</a></li>
-                    <li><a href="{{ '/kak-nas-nayti/' | url }}">Как проехать</a></li>
-                    <li><a href="{{ '/kak-nas-nayti/' | url }}">Контакты</a></li>
+    <div class="container" itemscope itemtype="http://schema.org/LocalBusiness">
+        <meta itemprop="name" content="Сколам-НЕТ">
+        <meta itemprop="description" content="Профессиональный ремонт сколов и трещин в лобовых автостеклах в Химках и ближайших районах. Быстро, качественно, с гарантией!">
+        <meta itemprop="telephone" content="+7 (915) 005-46-60">
+        <meta itemprop="address" content="г. Химки (Старбеево), ул. Чайкиной, д. 22">
+        <div class="site-header-container">
+            <header class="site-header">
+                <div class="header-top">
+                    <div class="logo">
+                        <img src="{{ '/images/logo.gif' | url }}" width="72" height="72" alt="Логотип Сколам-НЕТ">
+                        <div class="site-title">Сколам-НЕТ</div>
+                    </div>
                     
-                    <li><a href="{{ '/kak-remontiruem/' | url }}">Как ремонтируем</a></li>
-                    <li><a href="{{ '/discussion/' | url }}">ЗАДАТЬ ВОПРОС</a></li>
-                    <li><a href="https://khimki-avto.ru">Ремонт Химки</a></li>
-                    <li><a href="https://t.me/skolam_net">Группа в Телеграм</a></li>
-                </ul>
-            </nav>
-        </header>
-        
-        <main class="main-content">
-            <h1>{{ title or "Ремонт сколов и трещин в лобовых автостеклах в Химках, а также для близлежащих районов Куркино, Лобня, Сходня, Левый Берег!"}}</h1>
+                    <button class="menu-toggle" id="menuToggle">☰ Меню</button>
+                </div>
+            </header>
             
-            <div class="body-content">
-                {{ content | safe }}
+            <div class="content-wrapper">
+                <nav class="main-navigation">
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="{{ '/' | url }}">Главная</a></li>
+                        <li><a href="{{ '/zamena-remont/' | url }}">Менять или ремонт?</a></li>
+                        <li><a href="{{ '/Rekomendacii/' | url }}">ПРИ ПОВРЕЖДЕНИИ</a></li>
+                        <li><a href="{{ '/garantiy/' | url }}">Гарантия на ремонт</a></li>
+                        <li><a href="{{ '/specialist/' | url }}">Наши специалисты</a></li>
+                        <li><a href="{{ '/steklo-s-obogrevom/' | url }}">Стекло с обогревом</a></li>
+                        <li><a href="{{ '/remont-luka/' | url }}">Ремонт стекла крыши</a></li>
+                        <li><a href="{{ '/stoimost/' | url }}">Стоимость</a></li>
+                        <li><a href="{{ '/grafik-raboty/' | url }}">График работы</a></li>
+                        <li><a href="{{ '/kak-nas-nayti/' | url }}">Как проехать</a></li>
+                        <li><a href="{{ '/kak-nas-nayti/' | url }}">Контакты</a></li>
+                        
+                        <li><a href="{{ '/kak-remontiruem/' | url }}">Как ремонтируем</a></li>
+                        <li><a href="{{ '/discussion/' | url }}">ЗАДАТЬ ВОПРОС</a></li>
+                        <li><a href="https://khimki-avto.ru">Ремонт Химки</a></li>
+                        <li><a href="https://t.me/skolam_net">Группа в Телеграм</a></li>
+                    </ul>
+                </nav>
+                
+                <main class="main-content">
+                    <div class="body-content">
+                        {{ content | safe }}
+                    </div>
+                </main>
             </div>
-        </main>
+        </div>
         
         <footer class="site-footer">
             <div class="footer-menu">
                 <a href="{{ '/' | url }}">Домашняя страница</a> | 
-                <a href="{{ '/kak-nas-nayti/' | url }}">О нас</a> | 
+                <a href="{{ '/specialist/' | url }}">О нас</a> | 
                 <a href="{{ '/stoimost/' | url }}">Стоимость услуг</a> | 
                 <a href="{{ '/kak-nas-nayti/' | url }}">Контакты</a>
             </div>
@@ -77,6 +125,14 @@
             if (menuToggle && navMenu) {
                 menuToggle.addEventListener('click', function() {
                     navMenu.classList.toggle('active');
+                });
+                
+                // Закрываем меню при клике на ссылку (на мобильных)
+                const navLinks = navMenu.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navMenu.classList.remove('active');
+                    });
                 });
             }
         });
