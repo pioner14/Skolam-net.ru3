@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npx @11ty/eleventy --serve",
-    "build": "npm run convert-images && npm run minify-css && npx @11ty/eleventy --config=.eleventy.prod.js",
+    "build": "npm run convert-images && npm run minify-css && npx @11ty/eleventy --config=.eleventy.prod.js && node scripts/update-image-references.js",
     "deploy": "npm run build && gh-pages -d _site",
     "convert-images": "./scripts/auto-convert-images.sh",
     "optimize-images": "node scripts/optimize-images.js",
