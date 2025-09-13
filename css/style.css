@@ -565,6 +565,12 @@ button:active, .button:active {
   box-shadow: var(--box-shadow);
 }
 
+/* Стили для iframe виджета Telegram */
+.styled-telegram-widget {
+  background-color: var(--text-color) !important;
+  border: none !important;
+}
+
 /* Для очень маленьких экранов */
 @media (max-width: 480px) {
   .telegram-widget-container {
