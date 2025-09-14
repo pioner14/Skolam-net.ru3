@@ -128,6 +128,11 @@ function testCalculator() {
       name: 'Улучшенный стиль блока результатов', 
       selector: 'class="result-container"',
       file: calculatorContent
+    },
+    { 
+      name: 'Наличие блока с объяснением расчета', 
+      selector: 'class="calculation-explanation"',
+      file: calculatorContent
     }
   ];
   
@@ -147,7 +152,48 @@ function testCalculator() {
   console.log(`\nПройдено: ${usabilityPassed}`);
   console.log(`Провалено: ${usabilityFailed}`);
   console.log(`Общий результат: ${usabilityFailed === 0 ? '✅ УЛУЧШЕНИЯ ЮЗАБИЛИТИ ВНЕСЕНЫ' : '❌ НЕОБХОДИМЫ ДОПОЛНИТЕЛЬНЫЕ УЛУЧШЕНИЯ'}`);
+  
+  // Проверка функциональности калькулятора
+  console.log('\n=== ПРОВЕРКА ФУНКЦИОНАЛЬНОСТИ ===');
+  
+  const functionalityChecks = [
+    { 
+      name: 'Наличие подробного объяснения расчета для скола', 
+      selector: 'Базовая стоимость ремонта скола:',
+      file: calculatorContent
+    },
+    { 
+      name: 'Наличие подробного объяснения расчета для остановки трещины', 
+      selector: 'Базовая стоимость остановки трещины:',
+      file: calculatorContent
+    },
+    { 
+      name: 'Наличие подробного объяснения расчета для заливки трещины', 
+      selector: 'Стоимость за 1 см:',
+      file: calculatorContent
+    }
+  ];
+  
+  let functionalityPassed = 0;
+  let functionalityFailed = 0;
+  
+  functionalityChecks.forEach(check => {
+    if (check.file.includes(check.selector)) {
+      console.log(`✅ ${check.name}`);
+      functionalityPassed++;
+    } else {
+      console.log(`❌ ${check.name}`);
+      functionalityFailed++;
+    }
+  });
+  
+  console.log(`\nПройдено: ${functionalityPassed}`);
+  console.log(`Провалено: ${functionalityFailed}`);
+  console.log(`Общий результат: ${functionalityFailed === 0 ? '✅ ФУНКЦИОНАЛЬНОСТЬ РЕАЛИЗОВАНА' : '❌ НЕОБХОДИМО ДОРАБОТАТЬ ФУНКЦИОНАЛЬНОСТЬ'}`);
 }
+
+// Запускаем тестирование
+testCalculator();
 
 // Запускаем тестирование
 testCalculator();

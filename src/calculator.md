@@ -34,6 +34,7 @@ keywords: калькулятор, стоимость, ремонт, скол, т
   <div class="result-container" id="result-container" style="display: none;">
     <h3>Результат расчета:</h3>
     <div class="result-details" id="result-details"></div>
+    <div class="calculation-explanation" id="calculation-explanation"></div>
     <button id="book-service-btn" class="btn-primary">Записаться на ремонт</button>
   </div>
   
@@ -43,7 +44,7 @@ keywords: калькулятор, стоимость, ремонт, скол, т
       <li>Выберите тип повреждения из списка</li>
       <li>Для заливки трещины введите её длину в сантиметрах</li>
       <li>Нажмите кнопку "Рассчитать стоимость"</li>
-      <li>Ознакомьтесь с ориентировочной стоимостью</li>
+      <li>Ознакомьтесь с ориентировочной стоимостью и подробным расчетом</li>
       <li>При необходимости запишитесь на ремонт</li>
     </ol>
     
@@ -126,6 +127,27 @@ keywords: калькулятор, стоимость, ремонт, скол, т
     font-weight: bold;
   }
   
+  .calculation-explanation {
+    margin: 15px 0;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border-left: 4px solid #4caf50;
+  }
+  
+  .calculation-explanation h4 {
+    margin-top: 0;
+    color: #730800;
+  }
+  
+  .calculation-explanation ul {
+    padding-left: 20px;
+  }
+  
+  .calculation-explanation li {
+    margin-bottom: 5px;
+  }
+  
   .info-section {
     margin-top: 30px;
     padding: 20px;
@@ -194,6 +216,7 @@ keywords: калькулятор, стоимость, ремонт, скол, т
     const calculateBtn = document.getElementById('calculate-btn');
     const resultContainer = document.getElementById('result-container');
     const resultDetails = document.getElementById('result-details');
+    const calculationExplanation = document.getElementById('calculation-explanation');
     const bookServiceBtn = document.getElementById('book-service-btn');
     const crackLengthInput = document.getElementById('crack-length');
     
@@ -226,27 +249,54 @@ keywords: калькулятор, стоимость, ремонт, скол, т
       
       let cost = 0;
       let description = '';
+      let explanation = '';
       
       switch(damageType) {
         case 'scuff':
           cost = 1500;
           description = 'Ремонт скола';
+          explanation = `
+            <h4>Подробный расчет:</h4>
+            <ul>
+              <li><strong>Базовая стоимость ремонта скола:</strong> 1500 руб.</li>
+              <li><strong>В расчет входит:</strong> материалы, работа специалиста, гарантия</li>
+              <li><strong>Примечание:</strong> Цена фиксированная независимо от размера скола</li>
+            </ul>
+          `;
           break;
         case 'crack-stop':
           cost = 1500;
           description = 'Остановка трещины';
+          explanation = `
+            <h4>Подробный расчет:</h4>
+            <ul>
+              <li><strong>Базовая стоимость остановки трещины:</strong> 1500 руб.</li>
+              <li><strong>В расчет входит:</strong> материалы, работа специалиста, гарантия</li>
+              <li><strong>Примечание:</strong> Цена фиксированная независимо от длины трещины</li>
+            </ul>
+          `;
           break;
         case 'crack-fill':
           cost = crackLength * 50;
           description = `Заливка трещины (${crackLength} см)`;
+          explanation = `
+            <h4>Подробный расчет:</h4>
+            <ul>
+              <li><strong>Длина трещины:</strong> ${crackLength} см</li>
+              <li><strong>Стоимость за 1 см:</strong> 50 руб.</li>
+              <li><strong>Итоговая стоимость:</strong> ${crackLength} см × 50 руб./см = ${cost} руб.</li>
+              <li><strong>В расчет входит:</strong> материалы, работа специалиста, гарантия</li>
+            </ul>
+          `;
           break;
       }
       
       resultDetails.innerHTML = `
         <p><strong>Услуга:</strong> ${description}</p>
         <p><strong>Ориентировочная стоимость:</strong> ${cost} руб.</p>
-        <p><small>Точная стоимость будет определена после осмотра повреждения нашим специалистом.</small></p>
       `;
+      
+      calculationExplanation.innerHTML = explanation;
       
       resultContainer.style.display = 'block';
       
