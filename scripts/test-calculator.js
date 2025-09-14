@@ -31,7 +31,7 @@ function testCalculator() {
     },
     { 
       name: 'Наличие формы калькулятора', 
-      selector: 'id="calculator-form"',
+      selector: 'class="calculator-form"',
       file: calculatorContent
     },
     { 
@@ -52,6 +52,16 @@ function testCalculator() {
     { 
       name: 'Наличие информации о факторах стоимости', 
       selector: 'Факторы, влияющие на стоимость ремонта:',
+      file: calculatorContent
+    },
+    { 
+      name: 'Наличие инструкции по использованию', 
+      selector: 'Как пользоваться калькулятором:',
+      file: calculatorContent
+    },
+    { 
+      name: 'Наличие placeholder в поле длины трещины', 
+      selector: 'placeholder="Введите длину трещины в сантиметрах"',
       file: calculatorContent
     },
     { 
@@ -94,6 +104,49 @@ function testCalculator() {
   } else {
     console.log('\n⚠️  Найдены проблемы, требующие исправления.');
   }
+  
+  // Дополнительные проверки на улучшения юзабилити
+  console.log('\n=== ДОПОЛНИТЕЛЬНЫЕ ПРОВЕРКИ ЮЗАБИЛИТИ ===');
+  
+  const usabilityChecks = [
+    { 
+      name: 'Улучшенные стили для полей ввода', 
+      selector: 'class="form-control"',
+      file: calculatorContent
+    },
+    { 
+      name: 'Улучшенные стили для кнопок', 
+      selector: 'class="btn-primary"',
+      file: calculatorContent
+    },
+    { 
+      name: 'Улучшенный стиль контейнера калькулятора', 
+      selector: 'class="calculator-container"',
+      file: calculatorContent
+    },
+    { 
+      name: 'Улучшенный стиль блока результатов', 
+      selector: 'class="result-container"',
+      file: calculatorContent
+    }
+  ];
+  
+  let usabilityPassed = 0;
+  let usabilityFailed = 0;
+  
+  usabilityChecks.forEach(check => {
+    if (check.file.includes(check.selector)) {
+      console.log(`✅ ${check.name}`);
+      usabilityPassed++;
+    } else {
+      console.log(`❌ ${check.name}`);
+      usabilityFailed++;
+    }
+  });
+  
+  console.log(`\nПройдено: ${usabilityPassed}`);
+  console.log(`Провалено: ${usabilityFailed}`);
+  console.log(`Общий результат: ${usabilityFailed === 0 ? '✅ УЛУЧШЕНИЯ ЮЗАБИЛИТИ ВНЕСЕНЫ' : '❌ НЕОБХОДИМЫ ДОПОЛНИТЕЛЬНЫЕ УЛУЧШЕНИЯ'}`);
 }
 
 // Запускаем тестирование
