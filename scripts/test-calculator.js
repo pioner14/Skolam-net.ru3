@@ -40,8 +40,33 @@ function testCalculator() {
       file: calculatorContent
     },
     { 
+      name: 'Наличие поля для размера скола', 
+      selector: 'id="scuff-size"',
+      file: calculatorContent
+    },
+    { 
       name: 'Наличие поля для длины трещины', 
       selector: 'id="crack-length"',
+      file: calculatorContent
+    },
+    { 
+      name: 'Наличие поля для времени с момента повреждения', 
+      selector: 'id="time-since-damage"',
+      file: calculatorContent
+    },
+    { 
+      name: 'Наличие поля для расположения повреждения', 
+      selector: 'id="damage-location"',
+      file: calculatorContent
+    },
+    { 
+      name: 'Наличие поля для глубины повреждения', 
+      selector: 'id="damage-depth"',
+      file: calculatorContent
+    },
+    { 
+      name: 'Наличие поля для загрязнения', 
+      selector: 'id="contamination"',
       file: calculatorContent
     },
     { 
@@ -133,6 +158,11 @@ function testCalculator() {
       name: 'Наличие блока с объяснением расчета', 
       selector: 'class="calculation-explanation"',
       file: calculatorContent
+    },
+    { 
+      name: 'Наличие блока с разбивкой стоимости', 
+      selector: 'class="cost-breakdown"',
+      file: calculatorContent
     }
   ];
   
@@ -170,6 +200,16 @@ function testCalculator() {
     { 
       name: 'Наличие подробного объяснения расчета для заливки трещины', 
       selector: 'Стоимость за 1 см:',
+      file: calculatorContent
+    },
+    { 
+      name: 'Наличие разбивки стоимости', 
+      selector: 'Разбивка стоимости:',
+      file: calculatorContent
+    },
+    { 
+      name: 'Наличие расчета для сколов более 10 мм', 
+      selector: 'Дополнительная стоимость:',
       file: calculatorContent
     }
   ];
