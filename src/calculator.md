@@ -38,7 +38,7 @@ keywords: калькулятор, стоимость, ремонт, скол, т
       <label for="time-since-damage">Время с момента повреждения:</label>
       <select id="time-since-damage" name="time-since-damage" class="form-control">
         <option value="0">Менее 1 дня</option>
-        <option value="0">1-3 дня</option>
+        <option value="100">1-3 дня</option>
         <option value="200">4-7 дней</option>
         <option value="500">Более 7 дней</option>
       </select>
