@@ -49,6 +49,71 @@
     }
     </script>
     
+    <!-- Service Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Service",
+      "serviceType": "Ремонт автостекол",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Сколам-НЕТ"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Химки и ближайшие районы"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Услуги по ремонту автостекол",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Ремонт сколов на лобовом стекле",
+              "description": "Профессиональный ремонт сколов на лобовом стекле автомобиля"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "RUB",
+              "price": "1500",
+              "description": "от 1500 руб. за ремонт скола"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Остановка трещин на лобовом стекле",
+              "description": "Остановка распространения трещин на лобовом стекле автомобиля"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "RUB",
+              "price": "1500",
+              "description": "1500 руб. за остановку трещины"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Заливка трещин на лобовом стекле",
+              "description": "Заливка трещин на лобовом стекле автомобиля специальным полимером"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "RUB",
+              "price": "50",
+              "description": "50 руб. за 1 см заливки трещины"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+    
     
     <link href="/Skolam-net.ru3/css/style.min.css" rel="stylesheet">
     
@@ -86,6 +151,8 @@
                         <li><a href="/Skolam-net.ru3/steklo-s-obogrevom/">Стекло с обогревом</a></li>
                         <li><a href="/Skolam-net.ru3/remont-luka/">Ремонт стекла крыши</a></li>
                         <li><a href="/Skolam-net.ru3/stoimost/">Стоимость</a></li>
+                        <li><a href="/Skolam-net.ru3/faq/">Вопрос-ответ</a></li>
+                        
                         <li><a href="/Skolam-net.ru3/grafik-raboty/">График работы</a></li>
                         <li><a href="/Skolam-net.ru3/kak-nas-nayti/">Контакты и проезд</a></li>
                         
@@ -117,16 +184,14 @@
 <h2>Как мы работаем?</h2>
 <p>Поймали скол или появилась трещина на лобовом стекле? Скорее заклеивайте повреждение прозрачным скотчем и звоните нам — мы спасем ваше стекло!</p>
 <p>Мы сэкономим ваше время и деньги, выполнив качественный ремонт вместо дорогостоящей замены всего стекла.</p>
+<p>За информацией о <a href="/stoimost/">стоимости ремонта</a> обращайтесь к нашему прайс-листу. Подробнее о <a href="/kak-remontiruem/">технологии ремонта</a> вы можете узнать на соответствующей странице. Также рекомендуем ознакомиться с <a href="/garantiy/">условиями гарантии</a> на выполненные работы.</p>
 <h2>Наши специалисты</h2>
 <p>Наши мастера имеют более 10 лет опыта работы и регулярно проходят обучение по новым технологиям ремонта автостекол.</p>
 <h2>Контакты</h2>
 <p>📞 Телефон для записи: <a href="tel:89150054660" class="btn-primary">8 (915) 005-46-60</a></p>
 <p>📍 Работаем в Химках и ближайших районах: Куркино, Лобня, Сходня, Левый Берег</p>
 <p>🕒 Без выходных и обедов!</p>
-<h2>Отзывы клиентов</h2>
-<div class="telegram-widget-container">
-  <script async src="https://telegram.org/js/telegram-widget.js?21" data-telegram-post="skolam_net/50" data-width="100%"></script>
-</div>
+<script>
                     </div>
                 </main>
             </div>
@@ -137,6 +202,7 @@
                 <a href="/Skolam-net.ru3/">Домашняя страница</a> | 
                 <a href="/Skolam-net.ru3/specialist/">О нас</a> | 
                 <a href="/Skolam-net.ru3/stoimost/">Стоимость услуг</a> | 
+                <a href="/Skolam-net.ru3/faq/">Вопрос-ответ</a> |
                 <a href="/Skolam-net.ru3/kak-nas-nayti/">Контакты и проезд</a>
             </div>
             <div class="footer-copyright">
