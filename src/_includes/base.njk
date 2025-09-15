@@ -49,6 +49,71 @@
     }
     </script>
     
+    <!-- Service Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Service",
+      "serviceType": "Ремонт автостекол",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Сколам-НЕТ"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Химки и ближайшие районы"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Услуги по ремонту автостекол",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Ремонт сколов на лобовом стекле",
+              "description": "Профессиональный ремонт сколов на лобовом стекле автомобиля"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "RUB",
+              "price": "1500",
+              "description": "от 1500 руб. за ремонт скола"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Остановка трещин на лобовом стекле",
+              "description": "Остановка распространения трещин на лобовом стекле автомобиля"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "RUB",
+              "price": "1500",
+              "description": "1500 руб. за остановку трещины"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Заливка трещин на лобовом стекле",
+              "description": "Заливка трещин на лобовом стекле автомобиля специальным полимером"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "RUB",
+              "price": "50",
+              "description": "50 руб. за 1 см заливки трещины"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+    
     {% if env == "production" %}
     <link href="{{ '/css/style.min.css' | url }}" rel="stylesheet">
     {% else %}
@@ -88,8 +153,8 @@
                         <li><a href="{{ '/steklo-s-obogrevom/' | url }}">Стекло с обогревом</a></li>
                         <li><a href="{{ '/remont-luka/' | url }}">Ремонт стекла крыши</a></li>
                         <li><a href="{{ '/stoimost/' | url }}">Стоимость</a></li>
-                        <li><a href="{{ '/calculator/' | url }}">Калькулятор</a></li>
-                        <li><a href="{{ '/otzyvy/' | url }}">Отзывы</a></li>
+                        <li><a href="{{ '/faq/' | url }}">Вопрос-ответ</a></li>
+                        
                         <li><a href="{{ '/grafik-raboty/' | url }}">График работы</a></li>
                         <li><a href="{{ '/kak-nas-nayti/' | url }}">Контакты и проезд</a></li>
                         
@@ -113,7 +178,7 @@
                 <a href="{{ '/' | url }}">Домашняя страница</a> | 
                 <a href="{{ '/specialist/' | url }}">О нас</a> | 
                 <a href="{{ '/stoimost/' | url }}">Стоимость услуг</a> | 
-                <a href="{{ '/otzyvy/' | url }}">Отзывы</a> | 
+                <a href="{{ '/faq/' | url }}">Вопрос-ответ</a> |
                 <a href="{{ '/kak-nas-nayti/' | url }}">Контакты и проезд</a>
             </div>
             <div class="footer-copyright">

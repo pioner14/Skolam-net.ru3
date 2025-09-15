@@ -30,7 +30,9 @@ keywords: химки, куркино, ремонт, скол, трещина, л
 
 Мы сэкономим ваше время и деньги, выполнив качественный ремонт вместо дорогостоящей замены всего стекла.
 
-Хотите узнать предварительную стоимость ремонта? Воспользуйтесь нашим [онлайн калькулятором](/calculator/).
+За информацией о <a href="/stoimost/">стоимости ремонта</a> обращайтесь к нашему прайс-листу. Подробнее о <a href="/kak-remontiruem/">технологии ремонта</a> вы можете узнать на соответствующей странице. Также рекомендуем ознакомиться с <a href="/garantiy/">условиями гарантии</a> на выполненные работы.
+
+
 
 ## Наши специалисты
 
@@ -44,69 +46,6 @@ keywords: химки, куркино, ремонт, скол, трещина, л
 
 🕒 Без выходных и обедов!
 
-<div id="location-info" class="info-block" style="display: none;">
-  <p id="location-message"></p>
-</div>
 
-## Отзывы клиентов
-
-<div class="telegram-widget-container">
-  <script async src="https://telegram.org/js/telegram-widget.js?21" data-telegram-post="skolam_net/50" data-width="100%"></script>
-</div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Функция для определения местоположения пользователя
-    function detectLocation() {
-      const locationInfo = document.getElementById('location-info');
-      const locationMessage = document.getElementById('location-message');
-      
-      // Проверяем, поддерживает ли браузер геолокацию
-      if (navigator.geolocation) {
-        // Запрашиваем разрешение на определение местоположения
-        navigator.geolocation.getCurrentPosition(
-          function(position) {
-            const latitude = position.coords.latitude;
-            const longitude = position.coords.longitude;
-            
-            // Примерные координаты Химок
-            const himkiLat = 55.8900;
-            const himkiLng = 37.4500;
-            
-            // Вычисляем расстояние до Химок (упрощенный расчет)
-            const distance = calculateDistance(latitude, longitude, himkiLat, himkiLng);
-            
-            // Показываем информацию о местоположении
-            locationInfo.style.display = 'block';
-            
-            if (distance <= 20) {
-              locationMessage.innerHTML = '<strong>Отлично!</strong> Вы находитесь недалеко от Химок. Мы работаем в вашем районе!';
-            } else {
-              locationMessage.innerHTML = `<strong>Информация:</strong> Ближайший к вам офис находится в Химках (${Math.round(distance)} км от вас).`;
-            }
-          },
-          function(error) {
-            // В случае ошибки или отказа пользователя
-            console.log('Ошибка определения местоположения:', error);
-          }
-        );
-      }
-    }
-    
-    // Упрощенная функция расчета расстояния между двумя точками
-    function calculateDistance(lat1, lon1, lat2, lon2) {
-      const R = 6371; // Радиус Земли в км
-      const dLat = (lat2 - lat1) * Math.PI / 180;
-      const dLon = (lon2 - lon1) * Math.PI / 180;
-      const a = 
-        Math.sin(dLat/2) * Math.sin(dLat/2) +
-        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
-        Math.sin(dLon/2) * Math.sin(dLon/2);
-      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-      return R * c;
-    }
-    
-    // Запускаем определение местоположения через небольшую задержку
-    setTimeout(detectLocation, 2000);
-  });
-</script>
