@@ -9,6 +9,10 @@
     
     <title>Ремонт лобового стекла с обогревом</title>
     
+    <!-- Preload шрифтов для улучшения производительности -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link rel="canonical" href="https://pioner14.github.io/Skolam-net.ru3/steklo-s-obogrevom/">
     
     <!-- Open Graph / Facebook -->
@@ -17,6 +21,7 @@
     <meta property="og:title" content="Ремонт лобового стекла с обогревом">
     <meta property="og:description" content="Ремонт сколов и трещин в лобовых стеклах с обогревом в Химках. Сохранение функции обогрева после ремонта.">
     <meta property="og:image" content="https://pioner14.github.io/Skolam-net.ru3/images/p1.webp">
+    <meta property="og:locale" content="ru_RU">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -45,7 +50,10 @@
       "telephone": "+7-915-005-46-60",
       "openingHours": "Mo-Su 00:00-23:59",
       "priceRange": "от 1000 руб.",
-      "areaServed": ["Химки", "Куркино", "Лобня", "Сходня", "Левый Берег"]
+      "areaServed": ["Химки", "Куркино", "Лобня", "Сходня", "Левый Берег"],
+      "sameAs": [
+        "https://t.me/skolam_net"
+      ]
     }
     </script>
     
@@ -114,6 +122,22 @@
     }
     </script>
     
+    <!-- Breadcrumb Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://pioner14.github.io/Skolam-net.ru3/"
+        }
+      ]
+    }
+    </script>
+    
     
     <link href="/Skolam-net.ru3/css/style.min.css" rel="stylesheet">
     
@@ -131,17 +155,31 @@
                         <picture>
                           <source srcset="/Skolam-net.ru3/images/logo.avif" type="image/avif">
                           <source srcset="/Skolam-net.ru3/images/logo.webp" type="image/webp">
-                          <img src="/Skolam-net.ru3/images/logo.gif" width="72" height="72" alt="Логотип Сколам-НЕТ">
+                          <img src="/Skolam-net.ru3/images/logo.gif" width="72" height="72" alt="Логотип Сколам-НЕТ" loading="lazy">
                         </picture>
                         <div class="site-title">Сколам-НЕТ</div>
                     </div>
                     
-                    <button class="menu-toggle" id="menuToggle">☰ Меню</button>
+                    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navMenu">☰ Меню</button>
                 </div>
             </header>
             
+            <!-- Хлебные крошки -->
+            <nav class="breadcrumbs" aria-label="Хлебные крошки">
+              
+              
+                
+                  <a href="/Skolam-net.ru3/">Главная</a> &gt;
+                
+              
+                
+                  <span aria-current="page">Steklo S Obogrevom</span>
+                
+              
+            </nav>
+            
             <div class="content-wrapper">
-                <nav class="main-navigation">
+                <nav class="main-navigation" role="navigation" aria-label="Основная навигация">
                     <ul class="nav-menu" id="navMenu">
                         <li><a href="/Skolam-net.ru3/">Главная</a></li>
                         <li><a href="/Skolam-net.ru3/zamena-remont/">Менять или ремонт?</a></li>
@@ -208,6 +246,8 @@
             
             if (menuToggle && navMenu) {
                 menuToggle.addEventListener('click', function() {
+                    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                    menuToggle.setAttribute('aria-expanded', !isExpanded);
                     navMenu.classList.toggle('active');
                 });
                 
@@ -215,6 +255,7 @@
                 const navLinks = navMenu.querySelectorAll('a');
                 navLinks.forEach(link => {
                     link.addEventListener('click', function() {
+                        menuToggle.setAttribute('aria-expanded', 'false');
                         navMenu.classList.remove('active');
                     });
                 });
@@ -223,7 +264,7 @@
     </script>
 
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
+    <script type="text/javascript" async>
        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
        m[i].l=1*new Date();
        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
@@ -241,7 +282,7 @@
     <!-- /Yandex.Metrika counter -->
     
     <!-- Telegram Widget Styles -->
-    <script>
+    <script async>
       document.addEventListener('DOMContentLoaded', function() {
         // Функция для изменения стилей виджета Telegram
         function styleTelegramWidget() {
@@ -261,5 +302,11 @@
         setTimeout(styleTelegramWidget, 1000);
       });
     </script>
+    
+    <!-- Поиск по сайту -->
+    
+    
+    <!-- Мобильное меню -->
+    
 </body>
 </html>
