@@ -9,6 +9,10 @@
     
     <title>{{ title or "Ремонт сколов и трещин в лобовых автостеклах в Химках, а также для близлежащих районов Куркино, Лобня, Сходня, Левый Берег"}}</title>
     
+    <!-- Preload шрифтов для улучшения производительности -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link rel="canonical" href="{{ page.url | url | absoluteUrl }}">
     
     <!-- Open Graph / Facebook -->
@@ -17,6 +21,7 @@
     <meta property="og:title" content="{{ title or "Ремонт сколов и трещин в лобовых автостеклах в Химках, а также для близлежащих районов Куркино, Лобня, Сходня, Левый Берег"}}">
     <meta property="og:description" content="{{ description or "Ремонт сколов и трещин в лобовых автостеклах в Химках, а также для близлежащих районов Куркино, Лобня, Сходня, Левый Берег"}}">
     <meta property="og:image" content="{{ '/images/p1.webp' | url | absoluteUrl }}">
+    <meta property="og:locale" content="ru_RU">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -45,7 +50,10 @@
       "telephone": "+7-915-005-46-60",
       "openingHours": "Mo-Su 00:00-23:59",
       "priceRange": "от 1000 руб.",
-      "areaServed": ["Химки", "Куркино", "Лобня", "Сходня", "Левый Берег"]
+      "areaServed": ["Химки", "Куркино", "Лобня", "Сходня", "Левый Берег"],
+      "sameAs": [
+        "https://t.me/skolam_net"
+      ]
     }
     </script>
     
@@ -114,6 +122,22 @@
     }
     </script>
     
+    <!-- Breadcrumb Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "{{ '/' | url | absoluteUrl }}"
+        }
+      ]
+    }
+    </script>
+    
     {% if env == "production" %}
     <link href="{{ '/css/style.min.css' | url }}" rel="stylesheet">
     {% else %}
@@ -133,17 +157,29 @@
                         <picture>
                           <source srcset="{{ '/images/logo.avif' | url }}" type="image/avif">
                           <source srcset="{{ '/images/logo.webp' | url }}" type="image/webp">
-                          <img src="{{ '/images/logo.gif' | url }}" width="72" height="72" alt="Логотип Сколам-НЕТ">
+                          <img src="{{ '/images/logo.gif' | url }}" width="72" height="72" alt="Логотип Сколам-НЕТ" loading="lazy">
                         </picture>
                         <div class="site-title">Сколам-НЕТ</div>
                     </div>
                     
-                    <button class="menu-toggle" id="menuToggle">☰ Меню</button>
+                    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navMenu">☰ Меню</button>
                 </div>
             </header>
             
+            <!-- Хлебные крошки -->
+            <nav class="breadcrumbs" aria-label="Хлебные крошки">
+              {% set crumbs = page | breadcrumbs %}
+              {% for crumb in crumbs %}
+                {% if not loop.last %}
+                  <a href="{{ crumb.url | url }}">{{ crumb.title }}</a> &gt;
+                {% else %}
+                  <span aria-current="page">{{ crumb.title }}</span>
+                {% endif %}
+              {% endfor %}
+            </nav>
+            
             <div class="content-wrapper">
-                <nav class="main-navigation">
+                <nav class="main-navigation" role="navigation" aria-label="Основная навигация">
                     <ul class="nav-menu" id="navMenu">
                         <li><a href="{{ '/' | url }}">Главная</a></li>
                         <li><a href="{{ '/zamena-remont/' | url }}">Менять или ремонт?</a></li>
@@ -195,6 +231,8 @@
             
             if (menuToggle && navMenu) {
                 menuToggle.addEventListener('click', function() {
+                    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                    menuToggle.setAttribute('aria-expanded', !isExpanded);
                     navMenu.classList.toggle('active');
                 });
                 
@@ -202,6 +240,7 @@
                 const navLinks = navMenu.querySelectorAll('a');
                 navLinks.forEach(link => {
                     link.addEventListener('click', function() {
+                        menuToggle.setAttribute('aria-expanded', 'false');
                         navMenu.classList.remove('active');
                     });
                 });
@@ -210,7 +249,7 @@
     </script>
 
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
+    <script type="text/javascript" async>
        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
        m[i].l=1*new Date();
        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
@@ -228,7 +267,7 @@
     <!-- /Yandex.Metrika counter -->
     
     <!-- Telegram Widget Styles -->
-    <script>
+    <script{% if env == "production" %} async{% endif %}>
       document.addEventListener('DOMContentLoaded', function() {
         // Функция для изменения стилей виджета Telegram
         function styleTelegramWidget() {
@@ -248,5 +287,97 @@
         setTimeout(styleTelegramWidget, 1000);
       });
     </script>
+    
+    <!-- Поиск по сайту -->
+    {% if env != "production" %}
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Плавная прокрутка к якорям
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+              targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          });
+        });
+        
+        // Динамическое обновление Schema.org разметки хлебных крошек
+        const breadcrumbsScript = document.querySelector('script[type="application/ld+json"]');
+        if (breadcrumbsScript) {
+          try {
+            const breadcrumbsData = JSON.parse(breadcrumbsScript.textContent);
+            if (breadcrumbsData["@type"] === "BreadcrumbList") {
+              // Обновляем хлебные крошки в Schema.org разметке
+              const crumbs = {{ page | breadcrumbs | dump | safe }};
+              breadcrumbsData.itemListElement = crumbs.map((crumb, index) => ({
+                "@type": "ListItem",
+                "position": index + 1,
+                "name": crumb.title,
+                "item": new URL(crumb.url, window.location.origin).href
+              }));
+              
+              breadcrumbsScript.textContent = JSON.stringify(breadcrumbsData, null, 2);
+            }
+          } catch (e) {
+            console.error("Ошибка при обновлении Schema.org разметки хлебных крошек:", e);
+          }
+        }
+        
+        // Ленивая загрузка фоновых изображений с помощью Intersection Observer
+        if ('IntersectionObserver' in window) {
+          const lazyBackgrounds = document.querySelectorAll('.hero');
+          const backgroundObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const element = entry.target;
+                // Фон уже задан в CSS, просто убираем класс для запуска загрузки
+                element.classList.add('lazy-loaded');
+                observer.unobserve(element);
+              }
+            });
+          });
+          
+          lazyBackgrounds.forEach(background => {
+            backgroundObserver.observe(background);
+          });
+        }
+      });
+    </script>
+    {% endif %}
+    
+    <!-- Мобильное меню -->
+    {% if env != "production" %}
+    <script>
+        // Мобильное меню
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', function() {
+                    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                    menuToggle.setAttribute('aria-expanded', !isExpanded);
+                    navMenu.classList.toggle('active');
+                });
+                
+                // Закрываем меню при клике на ссылку (на мобильных)
+                const navLinks = navMenu.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        navMenu.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
+    {% endif %}
 </body>
 </html>

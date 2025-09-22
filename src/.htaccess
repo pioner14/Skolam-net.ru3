@@ -1,0 +1,16 @@
+# Кэширование статических ресурсов
+<IfModule mod_expires.c>
+  ExpiresActive on
+  
+  # Кэширование изображений
+  ExpiresByType image/gif "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/avif "access plus 1 month"
+  
+  # Кэширование CSS
+  ExpiresByType text/css "access plus 1 week"
+  
+  # Кэширование JavaScript
+  ExpiresByType application/javascript "access plus 1 week"
