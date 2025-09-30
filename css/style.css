@@ -273,7 +273,7 @@ button:active, .button:active {
 }
 
 .hero.lazy-loaded {
-  background: linear-gradient(rgba(115, 8, 0, 0.7), rgba(68, 5, 1, 0.9)), url('/images/p1.webp') center/cover no-repeat;
+  background: linear-gradient(rgba(115, 8, 0, 0.7), rgba(68, 5, 1, 0.9)), url("/Skolam-net.ru3/images/p1.webp") center/cover no-repeat;
 }
 
 .hero-content {
