@@ -18,7 +18,7 @@ keywords: химки, адрес, контакты, телефон, схема �
 Надеемся на Ваше понимание и ждем Вашего звонка.
 
 <div class="info-block">
-  <p>Тел. <a href="tel:89150054660" class="btn-primary">8 915 005 46 60</a> или <a href="tel:89772699242" class="btn-primary">8 977 269 92 42</a></p>
+  <p>Тел. <a href="tel:89772699242" class="btn-primary">8 977 269 92 42</a></p>
 </div>
 
 ### Наш адрес:
